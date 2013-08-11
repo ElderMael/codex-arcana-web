@@ -1,0 +1,26 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'maven'
+
+    version = '0.0.1-SNAPSHOT'
+
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+
+    dependencies {
+        compile 'org.slf4j:slf4j-api:1.+'
+        compile 'ch.qos.logback:logback-classic:1.+'
+        compile 'com.google.guava:guava:14.+'
+
+        testCompile 'junit:junit:4.+'
+        testCompile 'org.mockito:mockito-all:1.9.+'
+    }
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    jar {  manifest.attributes provider: 'Miguel Angel Enriquez Lopez <sftwr.mael@gmail.com>'  }
+}

@@ -1,0 +1,10 @@
+/blog-web/bin/.gitignore
+.classpath
+.project
+*.class
+*.jar
+*.war
+.springBeans
+.settings/
+.gradle/
+build/

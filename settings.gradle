@@ -1,0 +1,1 @@
+include "blog-service", "blog-web", "blog-model"
