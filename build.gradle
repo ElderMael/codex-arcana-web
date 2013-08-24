@@ -2,10 +2,12 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'eclipse'
     apply plugin: 'maven'
-    
+
     project.group = 'org.mael.blog'
     version = '0.0.1-SNAPSHOT'
-    
+
+
+    compileJava.options.encoding = 'UTF-8'
 
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
@@ -24,8 +26,7 @@ subprojects {
         mavenLocal()
     }
 
-    jar {  
-    	manifest.attributes provider: 'Miguel Angel Enriquez Lopez <sftwr.mael@gmail.com>'  
-    }
-    
+    jar {   manifest.attributes provider: 'Miguel Angel Enriquez Lopez <sftwr.mael@gmail.com>'   }
+
+    tasks.withType(Compile) { options.encoding = 'UTF-8' }
 }

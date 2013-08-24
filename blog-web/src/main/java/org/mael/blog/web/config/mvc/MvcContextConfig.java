@@ -1,8 +1,10 @@
 package org.mael.blog.web.config.mvc;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -51,5 +53,14 @@ public class MvcContextConfig extends WebMvcConfigurerAdapter {
         resolver.setOrder(1);
 
         return resolver;
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        
+        messageSource.setBasename("META-INF/i18n/app-messages");
+
+        return messageSource;
     }
 }

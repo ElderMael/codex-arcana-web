@@ -1,3 +1,4 @@
+/blog-model/.gitignore
 /blog-web/bin/.gitignore
 .classpath
 .project

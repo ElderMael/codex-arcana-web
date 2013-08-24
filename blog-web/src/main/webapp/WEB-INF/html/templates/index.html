@@ -4,12 +4,23 @@
 <title>Codex Arcana</title>
 <link rel="stylesheet" href="../../../css/default.css"
     th:href="@{/css/default.css}" />
+<link rel="stylesheet" href="//ricostacruz.com/nprogress/nprogress.css" />
 </head>
 <body>
     <p>Hello World</p>
 
+    <button id="loadNews" value="Load news..."
+        th:text="#{org.mael.blog.web.i18n.index.LOAD_NEWS}">Load
+        news...</button>
+
+    <div id="news">
+        <p>Important news:</p>
+    </div>
+
     <script
         src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+    <script src="//ricostacruz.com/nprogress/nprogress.js"></script>
+    <script src="../../js/index.js" th:src="@{/js/index.js}"></script>
 </body>
 </html>
