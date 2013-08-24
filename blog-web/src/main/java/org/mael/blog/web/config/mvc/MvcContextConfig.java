@@ -29,6 +29,7 @@ public class MvcContextConfig extends WebMvcConfigurerAdapter {
     public ServletContextTemplateResolver templateResolver() {
         ServletContextTemplateResolver resolver = new ServletContextTemplateResolver();
 
+        resolver.setCharacterEncoding("UTF-8");
         resolver.setPrefix("/WEB-INF/html/templates/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");
@@ -58,7 +59,7 @@ public class MvcContextConfig extends WebMvcConfigurerAdapter {
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        
+
         messageSource.setBasename("META-INF/i18n/app-messages");
 
         return messageSource;

@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %class \(%thread\) - %message%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.mael.blog" level="DEBUG" />
+
+    <logger name="org.thymeleaf" level="OFF" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
