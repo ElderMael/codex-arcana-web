@@ -1,1 +1,1 @@
-include "blog-service", "blog-web", "blog-model"
+include "blog-service", "blog-web", "blog-dao", "blog-model"

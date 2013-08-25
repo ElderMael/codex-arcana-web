@@ -1,3 +1,4 @@
+/blog-dao/.gitignore
 /blog-model/.gitignore
 /blog-web/bin/.gitignore
 .classpath

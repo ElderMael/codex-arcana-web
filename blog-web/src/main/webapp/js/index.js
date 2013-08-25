@@ -1,31 +1,31 @@
-$(document).ready(
-		function() {
+$(document).ready(function() {
 
-			NProgress.done(true);
+	NProgress.done(true);
 
-			$(document).ajaxSend(function(event, request, settings) {
-				NProgress.start();
-			});
+	$(document).ajaxSend(function(event, request, settings) {
+		NProgress.start();
+	});
 
-			$(document).ajaxStop(function() {
-				NProgress.done(true);
-			});
+	$(document).ajaxStop(function() {
+		NProgress.done(true);
+	});
 
-			$('#loadNews').on(
-					'click',
-	function() {
-	$.ajax({
-							url : '/blog-web/news',
-							dataType : 'json',
-							success : function(data) {
-								for ( var i = 0; i < data.entries.length; i++) {
-									$('#news').append(
-											'<p>' + data.entries[i].content
-													+ '</p>');
-								}
+	$('#loadNews').on('click', function(event) {
 
-							}
-						});
-					});
+		console.log('Loading news...');
 
+		$.ajax({
+			url : '/blog-web/news',
+			type : 'GET',
+			dataType : 'json',
+			success : function(response) {
+				console.log(response);
+				for ( var i = 0; i < response.entries.length; i++) {
+					$('#news').append('<p>' + response.entries[0].content  + '</p>');
+				}
+			}
 		});
+
+	});
+
+});

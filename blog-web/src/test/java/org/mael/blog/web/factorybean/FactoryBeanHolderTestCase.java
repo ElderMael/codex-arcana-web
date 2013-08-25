@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class FactoryBeanHolderTestCase {
 
     @Test
+    @SuppressWarnings("resource")
     public void testHappyPath() {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(
