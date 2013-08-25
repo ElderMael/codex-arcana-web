@@ -10,22 +10,25 @@ $(document).ready(function() {
 		NProgress.done(true);
 	});
 
-	$('#loadNews').on('click', function(event) {
-
+	(function pollNews() {
 		console.log('Loading news...');
 
 		$.ajax({
 			url : '/blog-web/news',
 			type : 'GET',
 			dataType : 'json',
+			timeout : 2000,
 			success : function(response) {
 				console.log(response);
-				for ( var i = 0; i < response.entries.length; i++) {
-					$('#news').append('<p>' + response.entries[0].content  + '</p>');
-				}
-			}
+				$.each(response.entries, function(i, item) {
+					$('#news').append('<p>' + item.content + '</p>');
+				});
+			},
+			error : function() {
+				console.log('Error retrieving news.');
+			},
+			complete : setTimeout(function() {pollNews()}, 5000)
 		});
-
-	});
+	})();
 
 });

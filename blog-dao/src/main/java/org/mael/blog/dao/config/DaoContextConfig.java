@@ -54,7 +54,7 @@ public class DaoContextConfig {
         BoneCPDataSource dataSource = new BoneCPDataSource();
 
         dataSource.setDriverClass("org.hsqldb.jdbcDriver");
-        dataSource.setJdbcUrl("jdbc:hsqldb:file:/tmp/db/testdb;shutdown=true;ifExists=true");
+        dataSource.setJdbcUrl("jdbc:hsqldb:file:/home/necromancer/Desktop/gits/db/testdb");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
         dataSource.setIdleConnectionTestPeriodInMinutes(2);
