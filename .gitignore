@@ -6,7 +6,10 @@
 *.class
 *.jar
 *.war
+*.iml
 .springBeans
 .settings/
 .gradle/
 build/
+
+.idea/
